@@ -2,10 +2,18 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Digital Finance v2</title>
     
+    <!-- Favicon & PWA Tags -->
     <link rel="icon" type="image/png" href="icon.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#FFDE59">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Kas Digital">
+    <link rel="apple-touch-icon" href="icon.png">
 
     <style>
         * {
@@ -30,5 +38,15 @@
 
     <iframe src="https://script.google.com/macros/s/AKfycbwQTfsa7x-F508jHOGSD-czdS8gbF2CgheznLcUs-b1RjmvXLl-yqH1c3HEU-4Ww--zTw/exec" allowfullscreen></iframe>
 
+    <script>
+      // Registrasi Service Worker untuk PWA
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('./sw.js')
+            .then((reg) => console.log('Service Worker berhasil didaftarkan:', reg.scope))
+            .catch((err) => console.error('Pendaftaran Service Worker gagal:', err));
+        });
+      }
+    </script>
 </body>
 </html>
