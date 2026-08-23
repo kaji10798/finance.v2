@@ -5,49 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital Finance v2</title>
     <link rel="icon" type="image/png" href="icon.png">
-
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html, body { width: 100%; height: 100%; overflow: hidden; background-color: #111827; font-family: sans-serif; }
+        html, body { width: 100%; height: 100%; overflow: hidden; background-color: #111827; }
         iframe { width: 100%; height: 100%; border: none; }
-        
-        /* Tombol Bantuan Gagal Muat */
-        .incognito-helper {
-            position: fixed;
-            bottom: 12px;
-            right: 12px;
-            background: #FFDE59;
-            color: #000;
-            border: 2px solid #000;
-            padding: 8px 12px;
-            border-radius: 10px;
-            font-size: 11px;
-            font-weight: bold;
-            cursor: pointer;
-            box-shadow: 2px 2px 0px #000;
-            z-index: 9999;
-        }
-        .incognito-helper:active {
-            transform: translate(1px, 1px);
-            box-shadow: none;
-        }
     </style>
 </head>
 <body>
 
+    <!-- URL dengan parameter authuser=0 untuk memaksa bypass akun secondary -->
     <iframe src="https://script.google.com/macros/s/AKfycbwQTfsa7x-F508jHOGSD-czdS8gbF2CgheznLcUs-b1RjmvXLl-yqH1c3HEU-4Ww--zTw/exec?authuser=0" allowfullscreen></iframe>
 
-    <button class="incognito-helper" onclick="copyIncognitoLink()">
-        Gagal Muat? Salin Link Incognito
-    </button>
-
-    <script>
-      function copyIncognitoLink() {
-        const appUrl = "https://script.google.com/macros/s/AKfycbwQTfsa7x-F508jHOGSD-czdS8gbF2CgheznLcUs-b1RjmvXLl-yqH1c3HEU-4Ww--zTw/exec";
-        navigator.clipboard.writeText(appUrl).then(() => {
-          alert("Link berhasil disalin! Silakan buka Mode Incognito / Private Browser lalu tempelkan (paste) link ini.");
-        });
-      }
-    </script>
 </body>
 </html>
